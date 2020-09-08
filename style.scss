@@ -1,0 +1,183 @@
+@import 'variables';
+
+.custom-control-input {
+  width: 0;
+  height: 0;
+}
+
+.custom-control-label {
+  width: 100%;
+  cursor: pointer;
+}
+
+.chooser {
+  position: relative;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 1fr;
+  min-width: 300px;
+
+  &__content {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr auto;
+    width: 100%;
+    height: $form-field-height;
+    padding: 10px 0 9px 16px;
+    background: $color-bg-dark-grey;
+    border-radius: $border-radius;
+  }
+
+  &__selection-list {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__selection-list-inner {
+    display: flex;
+  }
+
+  &__empty-placeholder {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: $color-labels;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  &__counter {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 7px;
+    margin-left: 0.5rem;
+    background: $color-tag-bg;
+    color: $color-link;
+    border-radius: $border-radius;
+  }
+
+  .chooser-selection {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    grid-auto-columns: auto;
+    grid-column-gap: 0.8rem;
+    padding: 3px 7px;
+    margin-right: 0.5rem;
+    background: $color-tag-bg;
+    border-radius: $border-radius;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &__text {
+
+    }
+
+    &__close {
+      cursor: pointer;
+    }
+  }
+
+  &__toggle {
+    //outline: 1px solid yellow;
+    width: $form-field-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+
+    &.show {
+      .chooser__toggle-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__toggle-icon {
+    display: flex;
+  }
+
+  &__list {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 0;
+    list-style: none;
+    border: 1px solid $color-divider;
+    background: $color-white;
+    z-index: $dropdown-index;
+
+    &.show {
+      display: block;
+      //max-height: 150px;
+      //overflow: auto;
+      //margin-bottom: 10px;
+    }
+  }
+
+  &__list-item {
+    padding-left: 30px;
+    margin-bottom: 10px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+
+}
+
+.filters-panel {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto 1fr 1fr auto auto;
+  align-items: center;
+  min-height: $form-field-height;
+  margin: 24px 0;
+  padding: 0 24px;
+  font-size: 1rem;
+  line-height: 1.25rem;
+
+  &_demo {
+    padding: 0 20px;
+  }
+
+  &__icon {
+    margin-right: 24px;
+  }
+
+  &__filter-wrap {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+
+  &__filter-label {
+    white-space: nowrap;
+    margin-right: 1rem;
+  }
+
+  &__filter {
+    margin-right: 38px;
+    max-width: 300px;
+  }
+
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    min-width: 152px;
+  }
+}
